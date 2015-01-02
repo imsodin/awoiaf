@@ -4,6 +4,8 @@ import json
 import io
 from pprint import pprint
 from pymongo import MongoClient
+import traceback
+import nltk
 
 class Charachters(object):
   """docstring for Charachters"""
@@ -23,9 +25,9 @@ class Charachters(object):
     for l in links_list:
      self.args['charachters'].append(l['*'])
 
-  def getCharachterDetails(self):
+  def getCharachterDetails(self, charachters=None):
     char_list = []
-    for charachter in self.args['charachters']:
+    for charachter in charachters:
       print "Now Processing: "+charachter
       # fetching individual pages
       currents_url = 'http://awoiaf.westeros.org/api.php?action=parse&page='+charachter+'&format=json&section=0&prop=text'
@@ -33,10 +35,12 @@ class Charachters(object):
       d = json.loads(r.content)
       try:
         html_to_parse =  d['parse']['text']['*']
-        parsed_html = BeautifulSoup(html_to_parse)
+        parsed_html = BeautifulSoup(html_to_parse, "xml")
 
         char_data = dict()
         char_data["name"]=charachter
+
+        # fish stuff from data
         table = parsed_html.find('table')
         rows = parsed_html.findAll('tr')
         for row in rows:
@@ -50,7 +54,20 @@ class Charachters(object):
           if tKey and tVal:
             char_data[tKey] = tVal
         char_list.append(char_data)
+
+        # mine info from text
+        paragraph = parsed_html.find('p').getText()
+
+        pprint(paragraph)
+        sent_tokenizer=nltk.data.load('tokenizers/punkt/english.pickle')
+        sents = sent_tokenizer.tokenize(paragraph)
+        text = nltk.word_tokenize(sents[0:1][0])
+        print nltk.pos_tag(text)
+
+        # pprint(sents[0:2])
+
       except Exception, e:
+        traceback.print_exc()
         continue
     self.args['charachters_data'] = json.dumps(char_list)
 
@@ -73,7 +90,9 @@ class Charachters(object):
 chars = Charachters(dict())
 # chars.getCharachtersList()
 # print "Will process {} {}".format(len(chars.args['charachters']), "charachters")
-# chars.getCharachterDetails()
+chars.getCharachterDetails(['balon_Greyjoy'])
+
+# chars.getCharachterDetails(chars.args['charachters'])
 # print chars.args['charachters_data']
 
 # out_file = '../Data/charachters_details'
