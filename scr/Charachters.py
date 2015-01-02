@@ -1,5 +1,5 @@
 import requests
-from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
 import json
 import io
 from pprint import pprint
@@ -35,7 +35,7 @@ class Charachters(object):
       d = json.loads(r.content)
       try:
         html_to_parse =  d['parse']['text']['*']
-        parsed_html = BeautifulSoup(html_to_parse, "xml")
+        parsed_html = BeautifulSoup(html_to_parse)
 
         char_data = dict()
         char_data["name"]=charachter
@@ -56,7 +56,7 @@ class Charachters(object):
         char_list.append(char_data)
 
         # mine info from text
-        paragraph = parsed_html.find('p').getText()
+        paragraph = parsed_html.find('p').get_text()
 
         pprint(paragraph)
         sent_tokenizer=nltk.data.load('tokenizers/punkt/english.pickle')
