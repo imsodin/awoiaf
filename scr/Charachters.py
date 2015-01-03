@@ -62,10 +62,10 @@ class Charachters(object):
         sent_tokenizer=nltk.data.load('tokenizers/punkt/english.pickle')
         sents = sent_tokenizer.tokenize(paragraph)
         text = nltk.word_tokenize(sents[0:1][0])
-        print nltk.pos_tag(text)
-
-        # pprint(sents[0:2])
-
+        nlp_data_file = '../Data/nlp/%s_data' % (charachter.replace(" ", "_"))
+        nlpf = io.open(nlp_data_file, 'w', encoding='utf8')
+        nlpf.write(unicode(nltk.pos_tag(text)))
+        nlpf.close()
       except Exception, e:
         traceback.print_exc()
         continue
@@ -88,11 +88,11 @@ class Charachters(object):
 
 
 chars = Charachters(dict())
-# chars.getCharachtersList()
+#chars.getCharachtersList()
 # print "Will process {} {}".format(len(chars.args['charachters']), "charachters")
-chars.getCharachterDetails(['balon_Greyjoy'])
+#chars.getCharachterDetails(['balon_Greyjoy'])
 
-# chars.getCharachterDetails(chars.args['charachters'])
+#chars.getCharachterDetails(chars.args['charachters'])
 # print chars.args['charachters_data']
 
 # out_file = '../Data/charachters_details'
