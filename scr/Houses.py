@@ -4,6 +4,8 @@ import json
 import urllib
 import io
 from pprint import pprint
+from mongodb import MongoDB
+import sys
 
 
 class Houses(object):
@@ -21,8 +23,6 @@ class Houses(object):
     d = json.loads(r.content)
     html_to_parse =  d['parse']['text']['*']
     html_to_parse = html_to_parse.replace('<br>', '\n')
-
-
     parsed_html = BeautifulSoup(html_to_parse)
 
     info = dict()
@@ -41,14 +41,34 @@ class Houses(object):
         info[u'Name']  =  [unicode(house_name)]
       elif tKey:
         info[tKey] = tVal.split('\n')
-    pprint(info)
+    return info
 
+  def get_houses_loyalty(self):
+    cur=mong.arg['collection_ref'].find({},{"Name":1,"Overlord":1})
+    for c in cur:
+      try:
+        s =  c['Name'][0].rstrip().lstrip()
+        o = c['Overlord'][0].rstrip().lstrip()
+        seq = (s,o)
+        print "\t\t\t".join(seq)
+      except KeyError:
+        continue
 
+mong = MongoDB(dict({'collection':'Houses'}))
 houses = Houses(dict())
 
-with open(houses.arg['houses_list_file']) as f:
-      houses_list = f.read().splitlines()
+# with open(houses.arg['houses_list_file']) as f:
+#       houses_list = f.read().splitlines()
 
-for house in houses_list[:2]:
-  houses.get_house_info (house)
+# for house in houses_list:
+#   print ("Processing house:  " + house)
+#   info = houses.get_house_info (house)
+#   mong.arg['collection_ref'].insert(info)
+
+
+houses.get_houses_loyalty()
+
+
+
+
 

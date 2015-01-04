@@ -1,6 +1,8 @@
 import requests
 from xml.dom import minidom
 
+# Move this to the Houses class
+
 max_houses=460 #
 
 def get_house(offset):
