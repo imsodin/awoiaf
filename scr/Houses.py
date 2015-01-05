@@ -45,14 +45,61 @@ class Houses(object):
 
   def get_houses_loyalty(self):
     cur=mong.arg['collection_ref'].find({},{"Name":1,"Overlord":1})
+    rel_table = ''
+    node_table = ''
+
     for c in cur:
       try:
         s =  c['Name'][0].rstrip().lstrip()
         o = c['Overlord'][0].rstrip().lstrip()
+        col = '#'
+        if o == 'House Greyjoy':
+          col += '000000'
+        elif o == 'House Arryn':
+          col += '5D91EB'
+        elif o == 'House Bolton':
+          col += 'FE93CA'
+        elif o == 'House Baratheon of Dragonstone':
+          col += 'D8BD25'
+        elif o == 'House Lannister':
+          col += '8A1919'
+        elif o == 'House Stark':
+          col += '9E9E9E'
+        elif o == 'House Martell':
+          col += 'F97A10'
+        elif o == "House Baratheon of King's Landing":
+          col += 'F9B43F'
+        elif o == "House Tyrell":
+          col += '006400'
+        elif o == "House Baelish of Harrenhal":
+          col += '009700'
+        elif o == "House Targaryen":
+          col += 'D1361C'
+        elif o == "House Baratheon":
+          col += 'FDD518'
+        elif o == "House Tully":
+          col += '174B82'
+        else:
+          col = ''
+
         seq = (s,o)
-        print "\t\t\t".join(seq)
+        rel_table += "\t\t\t".join(seq) + '\n'
+        seq = (s,col)
+        node_table += "\t\t\t".join(seq)+ '\n'
+
+
       except KeyError:
         continue
+    out_file = '../Data/weateros_aliances'
+    f = io.open(out_file, 'w', encoding='utf8')
+    f.write(rel_table)
+    f.close()
+
+    out_file = '../Data/weateros_aliances_node_attrs'
+    f = io.open(out_file, 'w', encoding='utf8')
+    f.write(node_table)
+    f.close()
+
 
 mong = MongoDB(dict({'collection':'Houses'}))
 houses = Houses(dict())
