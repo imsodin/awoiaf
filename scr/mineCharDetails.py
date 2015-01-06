@@ -33,12 +33,12 @@ chars = Charachters(dict())
 
 if args.charachter:
   char_name = urllib.quote(args.charachter)
-  res = chars.mineCharachterInfo(args.charachter)
+  res = chars.mineCharachterInfo(char_name)
 
   if not os.path.isdir(nlp_dir):
     os.mkdir(nlp_dir)
 
-  out_file = nlp_dir+args.charachter
+  out_file = nlp_dir+char_name
   f = io.open(out_file, 'w', encoding='utf8')
   f.write(unicode(res))
   f.close()
