@@ -6,6 +6,8 @@ from pprint import pprint
 from pymongo import MongoClient
 import traceback
 import nltk
+from NLP import NLP
+import sys
 
 class Charachters(object):
   """docstring for Charachters"""
@@ -71,6 +73,13 @@ class Charachters(object):
         continue
     self.args['charachters_data'] = json.dumps(char_list)
 
+  def mineCharachterInfo(self,charachter):
+    url = "http://awoiaf.westeros.org/api.php?action=parse&page="+charachter+"&format=json&section=0&prop=text"
+    n = NLP({'url_to_fetch': url})
+    n.pipeline()
+    return(n.res)
+
+
   def stroreHouseDetails(self):
     client = MongoClient('mongodb://localhost:27017/')
     db = client['local']
@@ -87,7 +96,7 @@ class Charachters(object):
 
 
 
-chars = Charachters(dict())
+
 #chars.getCharachtersList()
 # print "Will process {} {}".format(len(chars.args['charachters']), "charachters")
 #chars.getCharachterDetails(['balon_Greyjoy'])

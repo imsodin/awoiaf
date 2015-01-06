@@ -1,0 +1,5 @@
+[Folders]
+dir=/Users/guyyachdav/Developer/awoiaf
+rootdir: %(dir)s
+datadir: %(dir)s/Data
+visdir: %(dir)s/vis
