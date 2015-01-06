@@ -19,9 +19,8 @@ args = parser.parse_args()
 # Config options
 try:
   config = ConfigParser.ConfigParser()
-  config.read('../etc/awoiafrc.default')
+  config.read(os.path.expanduser('~/.awoiafrc'))
   rootdir = config.get('Folders', 'rootdir')
-  print 'rootdir='+rootdir
   if not rootdir or not os.path.isdir(rootdir):
     raise RootDirException()
 except Exception, e:
