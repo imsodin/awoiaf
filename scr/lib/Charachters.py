@@ -74,7 +74,7 @@ class Charachters(object):
     self.args['charachters_data'] = json.dumps(char_list)
 
   def mineCharachterInfo(self,charachter):
-    url = "http://awoiaf.westeros.org/api.php?action=parse&page="+charachter+"&format=json&section=0&prop=text"
+    url = "http://awoiaf.westeros.org/api.php?action=parse&page="+charachter+"&format=json&section=0&prop=text&redicrects"
     n = NLP({'url_to_fetch': url})
     n.pipeline()
     return(n.res)
