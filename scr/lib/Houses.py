@@ -18,7 +18,8 @@ class Houses(object):
 
   def get_house_info(self,house_name):
 
-    awoif_url = 'http://awoiaf.westeros.org/api.php?action=parse&page='+urllib.quote(house_name)+'&format=json&section=0&prop=text'
+    awoif_url = 'http://awoiaf.westeros.org/api.php?action=parse&page='+urllib.quote(house_name)+
+                '&format=json&section=0&prop=text'
     r=requests.get(awoif_url)
     d = json.loads(r.content)
     html_to_parse =  d['parse']['text']['*']

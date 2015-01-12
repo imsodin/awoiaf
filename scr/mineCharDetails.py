@@ -18,32 +18,30 @@ args = parser.parse_args()
 
 # Config options
 try:
-  config = ConfigParser.ConfigParser()
-  config.read(os.path.expanduser('~/.awoiafrc'))
-  rootdir = config.get('Folders', 'rootdir')
-  if not rootdir or not os.path.isdir(rootdir):
-    raise RootDirException()
+    config = ConfigParser.ConfigParser()
+    config.read(os.path.expanduser('~/.awoiafrc'))
+    rootdir = config.get('Folders', 'rootdir')
+    if not rootdir or not os.path.isdir(rootdir):
+        raise RootDirException()
 except Exception, e:
-  traceback.print_exc()
+    traceback.print_exc()
 
 # app begins
 nlp_dir = rootdir+"/Data/nlp/"
 chars = Charachters(dict())
 
 if args.charachter:
-  char_name = urllib.quote(args.charachter)
-  res = chars.mineCharachterInfo(char_name)
+    char_name = urllib.quote(args.charachter)
+    res = chars.mineCharachterInfo(char_name)
 
-  if not os.path.isdir(nlp_dir):
-    os.mkdir(nlp_dir)
+    if not os.path.isdir(nlp_dir):
+      os.mkdir(nlp_dir)
+      out_file = nlp_dir+char_name
+      f = io.open(out_file, 'w', encoding='utf8')
+      f.write(unicode(res))
+      f.close()
 
-  out_file = nlp_dir+char_name
-  f = io.open(out_file, 'w', encoding='utf8')
-  f.write(unicode(res))
-  f.close()
-
-
-  pprint (res)
+      pprint(res)
 
 
 
