@@ -26,9 +26,14 @@ Dependencies
 ------------
 
 * nltk -NLTK is a leading platform for building Python programs to work with human language data.
-
-``` 
-pip install nltk
+* BeautifulSoup - Beautiful Soup is a Python library for pulling data out of HTML and XML files.
+* 
+```
+$ easy_install nltk beautifulsoup4
+```
+or
+````
+$ pip install nltk beautifulsoup4
 ```
 
 Configuration
