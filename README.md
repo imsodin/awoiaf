@@ -18,7 +18,7 @@ Quick Start
 Dependencies
 ------------
 
-* nltk
+* nltk -NLTK is a leading platform for building Python programs to work with human language data.
 
 ``` 
 pip install nltk
