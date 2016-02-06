@@ -15,6 +15,13 @@ Repo structure
 Quick Start
 ===========
 
+Prerequisites
+-------------
+
+* MongoDB - NoSQL document database
+* easy_install or pip - package managers for python
+
+
 Dependencies
 ------------
 
