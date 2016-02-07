@@ -33,7 +33,7 @@ chars = Charachters(dict())
 if args.charachter:
     char_name = urllib.quote(args.charachter)
     res = chars.mineCharachterInfo(char_name)
-
+    pprint(res)
     if not os.path.isdir(nlp_dir):
       os.mkdir(nlp_dir)
       out_file = nlp_dir+char_name
@@ -41,7 +41,7 @@ if args.charachter:
       f.write(unicode(res))
       f.close()
 
-      pprint(res)
+
 
 
 
