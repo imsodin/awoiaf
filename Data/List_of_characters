@@ -44,7 +44,7 @@
 ,'Alayaya'
 ,'Albar Royce'
 ,'Albett'
-,"Alchemists' Guild"
+,'Alchemists' Guild'
 ,'Alebelly'
 ,'Alekyne Florent'
 ,'Alequo Adarys'
@@ -180,7 +180,7 @@
 ,'Barth (brewer)'
 ,'Barthogan Stark'
 ,'Bass'
-,"Bastard's Boys"
+,'Bastard's Boys'
 ,'Bayard Norcross'
 ,'Bear Island'
 ,'Bearded Ben'
@@ -766,7 +766,7 @@
 ,'Harbert'
 ,'Harbert Paege'
 ,'Hareth (Maester)'
-,"Hareth (Mole's Town)"
+,'Hareth (Mole's Town)'
 ,'Harghaz'
 ,'Harlan Grandison'
 ,'Harlan Hunter'
@@ -870,7 +870,7 @@
 ,'Jaehaerys I Targaryen'
 ,'Jason Lannister (son of Gerold)'
 ,'Khal'
-,"King's Landing"
+,'King's Landing'
 ,'King-Beyond-the-Wall'
 ,'Kingsguard'
 ,'Kingship'
@@ -890,17 +890,17 @@
 ,'Maester Aemon'
 ,'Maesters'
 ,'Mance Rayder'
-,"Mole's Town"
+,'Mole's Town'
 ,'Mountain clans'
 ,'Mountains of the Moon'
-,"Night's Watch"
+,'Night's Watch'
 ,'Nightsong'
 ,'Oldcastle'
 ,'Pinkmaiden'
 ,'Purple Wedding'
 ,'Pyke'
 ,'Quiet Isle'
-,"R'hllor"
+,'R'hllor'
 ,'Rain House'
 ,'Rainbow Guard'
 ,'Ramsay Bolton'
@@ -910,7 +910,7 @@
 ,'Riverlands'
 ,'Riverrun'
 ,'Rosby'
-,"Sack of King's Landing"
+,'Sack of King's Landing'
 ,'Serwyn'
 ,'Seven Kingdoms'
 ,'Shadow Tower'
@@ -920,7 +920,7 @@
 ,'Starfall'
 ,'Stokeworth'
 ,'Stonehelm'
-,"Storm's End"
+,'Storm's End'
 ,'Storm King'
 ,'Stormcrows'
 ,'Strongsong'
@@ -932,7 +932,7 @@
 ,'The Hedge Knight'
 ,'The Reach'
 ,'The Wall'
-,"Torrhen's Square"
+,'Torrhen's Square'
 ,'Tourney at Ashford Meadow'
 ,'Tyrosh'
 ,'Unsullied'
@@ -961,7 +961,7 @@
 ,'Golden Tooth'
 ,'Goldengrove'
 ,'Greyjoy Rebellion'
-,"Griffin's Roost"
+,'Griffin's Roost'
 ,'Hand of the King'
 ,'Happy Port'
 ,'Hedge knight'
@@ -1007,7 +1007,7 @@
 ,'Janei Lannister'
 ,'Janna Tyrell'
 ,'Janos Slynt'
-,"Jaqen H'ghar"
+,'Jaqen H'ghar'
 ,'Jared Frey'
 ,'Jaremy Rykker'
 ,'Jarl'
@@ -1544,13 +1544,13 @@
 ,'Parmen Crane'
 ,'Patchface'
 ,'Pate'
-,"Pate (King's Landing)"
+,'Pate (King's Landing)'
 ,'Pate (Lancewood)'
 ,'Pate (Mory)'
-,"Pate (Night's Watch)"
+,'Pate (Night's Watch)'
 ,'Pate (Old)'
 ,'Pate (Pinchbottom)'
-,"Pate (Shermer's Grove)"
+,'Pate (Shermer's Grove)'
 ,'Pate (Standfast)'
 ,'Pate of the Blue Fork'
 ,'Patrek Mallister'
@@ -1802,10 +1802,10 @@
 ,'Rymolf'
 ,'Rymund the Rhymer'
 ,'Ryon Allyrion'
-,"S'vrone"
+,'S'vrone'
 ,'Saathos'
 ,'Saera Targaryen'
-,"Sailor's Wife"
+,'Sailor's Wife'
 ,'Salladhor Saan'
 ,'Sallei Paege'
 ,'Sallor'
@@ -1879,8 +1879,8 @@
 ,'Tor'
 ,'Tyrion Lannister'
 ,'Vixen'
-,"Wayfarer's Rest"
-,"Widow's Watch"
+,'Wayfarer's Rest'
+,'Widow's Watch'
 ,'Windblown'
 ,'Woods witch'
 ,'Shady Glen'
