@@ -35,10 +35,11 @@ if args.charachter:
   char_name = urllib.quote(args.charachter)
   res = chars.getCharachtersDetails(char_name)
 
-  if not os.path.isdir(datadir):
-    os.mkdir(datadir)
+  infodir =  "/".join([datadir,'info'])
+  if not os.path.isdir(infodir):
+    os.mkdir(infodir)
 
-  out_file = "/".join([datadir,char_name])
+  out_file = "/".join([infodir,char_name])
   print (out_file)
   f = io.open(out_file, 'w', encoding='utf8')
   f.write(unicode(res))
