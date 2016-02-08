@@ -5,7 +5,7 @@ import io
 import ConfigParser
 import traceback
 from pprint import pprint
-from Charachters import Charachters
+from Charachters import CharachterPage
 
 class RootDirException(Exception):
     pass
@@ -28,19 +28,19 @@ except Exception, e:
 
 # app begins
 nlp_dir = rootdir+"/Data/nlp/"
-chars = Charachters(dict())
+chars = CharachterPage()
 
 if args.charachter:
   char_name = urllib.quote(args.charachter)
-  res = chars.mineCharachterInfo(char_name)
+  res = chars.getCharachtersDetails(char_name)
 
-  if not os.path.isdir(nlp_dir):
-    os.mkdir(nlp_dir)
+    # if not os.path.isdir(nlp_dir):
+    #   os.mkdir(nlp_dir)
 
-  out_file = nlp_dir+char_name
-  f = io.open(out_file, 'w', encoding='utf8')
-  f.write(unicode(res))
-  f.close()
+    # out_file = nlp_dir+char_name
+    # f = io.open(out_file, 'w', encoding='utf8')
+    # f.write(unicode(res))
+    # f.close()
 
 
   pprint (res)

@@ -1,4 +1,3 @@
-
 import requests
 from bs4 import BeautifulSoup
 import json
@@ -74,15 +73,8 @@ class CharachterPage(Page):
           if tKey and tVal:
             _data[tKey] = tVal
         _paragraph = _parsed_html.find('p').get_text()
-        _data['Summary'] = _paragraph
+        _data[unicode('Summary')] = _paragraph
         return _data
-
-
-cp = CharachterPage()
-pprint (cp.getCharachtersDetails('Rhaegar Frey'))
-
-
-
 
 # class Charachters(object):
 #   """docstring for Charachters"""
