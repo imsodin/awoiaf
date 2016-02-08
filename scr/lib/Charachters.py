@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import json
 from Page import Page
+from Application import Application
 # import io
 from pprint import pprint
 # from pymongo import MongoClient
@@ -15,6 +16,8 @@ from pprint import pprint
 
 class CharachterPage(Page):
     """Handles data scrpaing of charachters"""
+
+
     def getCharachtersList(self):
         """Returns a list of charachters
 
@@ -28,7 +31,28 @@ class CharachterPage(Page):
         _links_list = _data['parse']['links']
         return _links_list
 
-    def getCharachtersDetails(self, charachter_name):
+    def fetchCharachterText(self, charachter_name):
+        """Downloads charachter page in raw text format
+
+        Args:
+            charachter_name (string): name of charachter (spaces allowed)
+
+        Returns:
+            string: entire text of page
+        """
+        self.setParams('page', charachter_name)
+        self.setParams('prop', 'text')
+        self.fetchPage()
+        _request = self.getRequest()
+        _data = json.loads(_request.content)
+        _data = _data['parse']['text']['*']
+        # pprint (_data)
+        soup = BeautifulSoup(_data)
+        text = soup.getText()
+        return text
+
+
+    def getCharachterInfo(self, charachter_name):
         """Returns JSON formatted data structure for charachter_name
 
         Args:
