@@ -3,6 +3,9 @@ import io
 import ConfigParser
 import traceback
 from pprint import pprint
+import sys
+
+
 
 class RootDirException(Exception):
     """Summary"""
@@ -16,6 +19,10 @@ class Application(object):
     """
     def __init__(self, arg=None):
         """Application setup"""
+        # encoding=utf8
+        reload(sys)
+        sys.setdefaultencoding('utf8')
+
         super(Application, self).__init__()
         global settings
         self.settings = {
