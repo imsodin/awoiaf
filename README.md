@@ -11,7 +11,7 @@ Repo structure
  |--lib - application modules
  |--sge - scripts to run jobs in parallel on a compute cluster  
  |-etc - configration
- |-data - downloaded data
+ |-Data - downloaded data
 ```
 
 Quick Start
@@ -59,7 +59,12 @@ datadir: %(dir)s/Data
 visdir: %(dir)s/vis
 ```
 
+hint
+----
 
+Look at the scripts in the scr folder to see how the modules in this app can be used and to build your data repository. 
 
+Running multiple jobs in parallel
+=================================
 
-
+As this project deals with processing 1000s of wiki pages it would make sense to use parallel processing to speed things up. If you have access to a compute cluster and to the sonofgrid scheduling system (formerly called SGE) then check the folder scr/sge for scripts and docusmentation on how to run paralllel jobs. If you want to schedule jobs using a different system (e.g. Hadoop YARN) then you will have to figure out how to do this yourself. 
