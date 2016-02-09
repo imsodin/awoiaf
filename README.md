@@ -3,6 +3,8 @@ Overview
 
 This project contains the code base to extract data from the wiki portal http://awoiaf.westeros.org.
 
+![Iron Throne](https://rostlab.org/owiki/images/d/d7/Got21_400.jpg)
+
 Repo structure
 ==============
 ```
