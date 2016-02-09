@@ -5,12 +5,14 @@ This project contains the code base to extract data from the wiki portal http://
 
 Repo structure
 ==============
-
+```
  |
- |-scr - main scripts (python)
+ |-scr - main driver scripts (python)
+ |--lib - application modules
+ |--sge - scripts to run jobs in parallel on a compute cluster  
  |-etc - configration
  |-data - downloaded data
-
+```
 
 Quick Start
 ===========
@@ -28,7 +30,6 @@ Dependencies
 * BeautifulSoup - Beautiful Soup is a Python library for pulling data out of HTML and XML files.
 ```
 $ easy_install nltk beautifulsoup4
-
 ```
 or
 ````
