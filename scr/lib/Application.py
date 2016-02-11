@@ -65,4 +65,4 @@ class Application(object):
             f = io.open(file_path, 'w', encoding='utf8')
             f.write(unicode(content))
             f.close()
-            print (file_path)
+            sys.stderr.write (file_path)

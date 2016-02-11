@@ -42,7 +42,7 @@ if args.house:
     file_name_info = '/'.join([app.settings['storage_folder']['Houses_info'],house_name])
     file_name_nlp = '/'.join([app.settings['storage_folder']['Houses_nlp'],house_name])
     # store data onto disk
-    if not os.path.exists(file_name_info):
+    if not os.path.exists(file_name_text):
         content = houses.fetchHouseText(house_name)
         app.storeFile(file_name_text, content)
         content = houses.getHouseInfo(house_name)
