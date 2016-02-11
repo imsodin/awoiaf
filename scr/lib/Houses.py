@@ -1,13 +1,12 @@
 import requests
 from bs4 import BeautifulSoup
-import json
-from Page import Page
-import urllib
-# import io
-from pprint import pprint
-# from mongodb import MongoDB
-# import sys
 from xml.dom import minidom
+import json
+from pprint import pprint
+from Page import Page
+from NLP import NLP
+# from mongodb import MongoDB
+
 
 class HousesPage(Page):
     """docstring for HousesPage
@@ -104,6 +103,28 @@ class HousesPage(Page):
                 info[t_key] = t_val.split('\n')
         return info
 
+    def fetchHouseText(self, house_name):
+        """Downloads house page in raw text format
+
+        Args:
+            house_name (string): name of house (spaces allowed)
+
+        Returns:
+            string: entire text of page
+        """
+        self.setParams('page', house_name)
+        self.setParams('prop', 'text')
+        self.fetchPage()
+        _request = self.getRequest()
+        _data = json.loads(_request.content)
+        _data = _data['parse']['text']['*']
+        # pprint (_data)
+        soup = BeautifulSoup(_data)
+        text = soup.getText()
+        return text
+
+    def nlpHouseInfo(self, text):
+        return NLP().pipeline(text)
 
 
 #   def get_houses_loyalty(self):
