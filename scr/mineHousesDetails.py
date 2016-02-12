@@ -49,6 +49,6 @@ if args.house:
         app.storeFile(file_name_info, content)
     else:
       with open(file_name_text, 'r') as myfile:
-        data=myfile.read().replace('\n', '')
-    content = houses.nlpHouseInfo(data)
+        content=myfile.read().replace('\n', '')
+    content = houses.nlpHouseInfo(content)
     app.storeFile(file_name_nlp, content)
