@@ -59,16 +59,6 @@ AWOIAF_ROOT=/path/to/awoiaf/
 export PYTHONPATH="${PYTHONPATH}:${AWOIAF_ROOT}/scr/lib"
 ```
 
-Create etc/awoiafrc.default by copyng etc/awoiafrc.default.template and reflecting the root installation dir
-
-```
-[Folders]
-dir=/path/to/awoiaf
-rootdir: %(dir)s
-datadir: %(dir)s/Data
-visdir: %(dir)s/vis
-```
-
 hint
 ----
 
