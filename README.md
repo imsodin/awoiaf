@@ -12,7 +12,6 @@ Repo structure
  |-scr - main driver scripts (python)
  |--lib - application modules
  |--sge - scripts to run jobs in parallel on a compute cluster  
- |-etc - configration
  |-Data - downloaded data
 ```
 
