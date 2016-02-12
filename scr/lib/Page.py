@@ -53,4 +53,4 @@ class Page(object):
                 _output_string.append("{}={}".format(key, value))
         self.args['reqeust_url'] =  self.args['base_api_url'] + '?' + "&".join(_output_string)
         if debug:
-            sys.stderr.write (self.args['reqeust_url'])
+            sys.stderr.write (self.args['reqeust_url']+'\n')

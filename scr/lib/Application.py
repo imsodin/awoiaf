@@ -36,10 +36,11 @@ class Application(object):
 
         # Get config options
         try:
-            _config = ConfigParser.ConfigParser()
-            _config.read(os.path.expanduser('~/.awoiafrc'))
-            self.settings['rootdir'] = _config.get('Folders', 'rootdir')
-            self.settings['datadir'] = _config.get('Folders', 'datadir')
+            # guess installation folder
+            _cur_path =  os.path.dirname(__file__)
+            self.settings['rootdir'] = os.path.realpath(_cur_path+'/../..')
+            # assign data dir
+            self.settings['datadir'] =  '/'.join([self.settings['rootdir'],'Data'])
 
             for dir_path in [self.settings['rootdir'], self.settings['datadir']]:
                 if not dir_path or not os.path.isdir(dir_path):
@@ -65,4 +66,4 @@ class Application(object):
             f = io.open(file_path, 'w', encoding='utf8')
             f.write(unicode(content))
             f.close()
-            sys.stderr.write (file_path)
+            sys.stderr.write(file_path+'\n')
