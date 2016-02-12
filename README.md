@@ -25,6 +25,11 @@ Prerequisites
 * MongoDB - NoSQL document database
 * easy_install or pip - package managers for python
 
+Easy setup
+------------
+
+To download the dependencies, create the awoiafrc.default file and set the correct PYTHONPATH, run `. ./build.sh` from the root directory of this repository. NB: The first . is necessary to export the PYTHONPATH to your current bash session. Alternatively follow the next steps:   
+
 Dependencies
 ------------
 
@@ -51,7 +56,7 @@ AWOIAF_ROOT=/path/to/awoiaf/
 export PYTHONPATH="${PYTHONPATH}:${AWOIAF_ROOT}/scr/lib"
 ```
 
-Change etc/awoiafrc.default:2 to reflect the root installation dir
+Create etc/awoiafrc.default by copyng etc/awoiafrc.default.template and reflecting the root installation dir
 
 ```
 [Folders]
@@ -69,4 +74,4 @@ Look at the scripts in the scr folder to see how the modules in this app can be 
 Running multiple jobs in parallel
 =================================
 
-As this project deals with processing 1000s of wiki pages it would make sense to use parallel processing to speed things up. If you have access to a compute cluster and to the sonofgrid scheduling system (formerly called SGE) then check the folder scr/sge for scripts and docusmentation on how to run paralllel jobs. If you want to schedule jobs using a different system (e.g. Hadoop YARN) then you will have to figure out how to do this yourself. 
+As this project deals with processing 1000s of wiki pages it would make sense to use parallel processing to speed things up. If you have access to a compute cluster and to the sonofgrid scheduling system (formerly called SGE) then check the folder scr/sge for scripts and documentation on how to run paralllel jobs. If you want to schedule jobs using a different system (e.g. Hadoop YARN) then you will have to figure out how to do this yourself. 
