@@ -9,6 +9,9 @@ OR
     2. parses the page's info box
     3. analyzes the part of speech of the page
 
+Example:
+    python mineHousesDetails.py -v -s 'House Egen'
+
 Attributes:
     app (Application): The main application class
     args (dict): input arguments

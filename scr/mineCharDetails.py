@@ -3,6 +3,9 @@
 2. parses the page's info box
 3. analyzes the part of speech of the page
 
+Example:
+    python mineCharDetails.py -v -c Bran_Stark
+
 Attributes:
     app (Application): The main application class
     args (dict): input arguments
