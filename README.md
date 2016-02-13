@@ -57,7 +57,7 @@ You will need to set up the PYTHONPATH to refeerence the lib folder
 ```
 # in bash
 AWOIAF_ROOT=/path/to/awoiaf/
-export PYTHONPATH="${PYTHONPATH}:${AWOIAF_ROOT}/scr/lib"
+export PYTHONPATH="${PYTHONPATH}:${AWOIAF_ROOT}/src/lib"
 ```
 
 Hint
