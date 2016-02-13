@@ -1,11 +1,21 @@
-"""Summary
+"""Summary: driver script to handle data related to houses information in the wiki. The script can be used for
+
+* download a list of great houses
+
+OR
+
+* for each house;
+    1. downloads input house_name page as raw text
+    2. parses the page's info box
+    3. analyzes the part of speech of the page
 
 Attributes:
-    app (TYPE): Description
-    args (TYPE): Description
-    houses (TYPE): Description
-    list_of_houses (TYPE): Description
-    parser (TYPE): Description
+    app (Application): The main application class
+    args (dict): input arguments
+    houses (TYPE): access the HousesPage module
+    list_of_houses (list): list of houses extracted from the wiki
+    content (string): extracted content from the wiki
+    parser (argpasre): access the argparse module
 """
 import os
 import argparse
@@ -14,9 +24,6 @@ from pprint import pprint
 from Houses import HousesPage
 from Application import Application
 
-
-class RootDirException(Exception):
-    pass
 
 # Command line options
 parser = argparse.ArgumentParser()
