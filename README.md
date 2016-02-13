@@ -27,7 +27,7 @@ Prerequisites
 Easy setup
 ------------
 
-To download the dependencies, create the awoiafrc.default file and set the correct PYTHONPATH, run `. ./build.sh` from the root directory of this repository. NB: The first . is necessary to export the PYTHONPATH to your current bash session.
+To download the dependencies: set the correct PYTHONPATH, run `. ./build.sh` from the root directory of this repository. NB: The first . is necessary to export the PYTHONPATH to your current bash session.
 
 **Important**: it is necessary to export the PYTONPATH every time you wish to run this tools. To do so you can either run the build script every time, or jump to the configuration section below.
 
@@ -36,7 +36,7 @@ Alternatively follow the next steps:
 Dependencies
 ------------
 
-* nltk -NLTK is a leading platform for building Python programs to work with human language data.
+* nltk - NLTK is a leading platform for building Python programs to work with human language data.
 * BeautifulSoup - Beautiful Soup is a Python library for pulling data out of HTML and XML files.
 ```
 $ easy_install nltk beautifulsoup4
