@@ -59,10 +59,22 @@ AWOIAF_ROOT=/path/to/awoiaf/
 export PYTHONPATH="${PYTHONPATH}:${AWOIAF_ROOT}/scr/lib"
 ```
 
-hint
+Hint
 ----
+The scrtips in the scr folder are used as the main drivers that build the data repository. You can look at those scripts as an entry point into the code. Here is a bried description for each script:
 
-Look at the scripts in the scr folder to see how the modules in this app can be used and to build your data repository. 
+```
+mineCharDetails.py  - handles Ice and Fire charachters` data. scripts can be used to: 
+1. obtain a list of charchater names 
+2. extract data from wiki entries dedicated to charachters. 
+
+mineHousesDetails.py  - handles data related to the great houses of Westeros. scripts can be used to: 
+1. obtain a list of all the houses names mentioned in the AWOIAF wiki 
+2. extracts data from wiki pages dedicated to houses.
+
+```
+
+Look at the scripts in the scr folder to see how the modules in this app can be used and
 
 Running multiple jobs in parallel
 =================================
