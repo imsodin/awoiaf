@@ -41,16 +41,17 @@ if args.charachter:
 
 
 if not os.path.exists(file_name_text):
-  content = chars.fetchCharachterText(char_name)
-  app.storeFile(file_name_text, content)
-  content = chars.getCharachterInfo(args.charachter)
-  app.storeFile(file_name_info, content)
-
+  text_content = chars.fetchCharachterText(char_name)
+  app.storeFile(file_name_text, text_content)
+  info_content = chars.getCharachterInfo(args.charachter)
+  app.storeFile(file_name_info, info_content)
+  nlp_content = chars.nlpCharachterInfo(text_content)
+  app.storeFile(file_name_nlp, nlp_content)
 else:
   with open(file_name_text, 'r') as myfile:
     data=myfile.read().replace('\n', '')
-content = chars.nlpCharachterInfo(data)
-app.storeFile(file_name_nlp, content)
+  content = chars.nlpCharachterInfo(data)
+  app.storeFile(file_name_nlp, content)
 
 
 
