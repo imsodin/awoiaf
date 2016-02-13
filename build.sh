@@ -17,7 +17,7 @@ if [ ! -z $PIP ] || [ ! -z $EASY ]; then
     fi
 
     echo "2. Re-exporting PYTHONPATH"
-    export PYTHONPATH="${PYTHONPATH}:${CURRENT_DIR}/scr/lib"
+    export PYTHONPATH="${PYTHONPATH}:${CURRENT_DIR}/src/lib"
     echo "   PYTHONPATH is $PYTHONPATH"
 
     echo "   FINISHED."
