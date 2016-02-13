@@ -10,10 +10,10 @@ if [ ! -z $PIP ] || [ ! -z $EASY ]; then
 
     if [ ! -z $PIP ]; then
         echo "   Installing via pip"
-        `which sudo` pip install nltk beautifulsoup4
+        `which sudo` pip install nltk beautifulsoup4 requests
     else
         echo "   Installing via easy_install"
-        `which sudo` easy_install install nltk beautifulsoup4
+        `which sudo` easy_install install nltk beautifulsoup4 requests
     fi
 
     echo "2. Re-exporting PYTHONPATH"

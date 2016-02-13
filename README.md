@@ -38,12 +38,13 @@ Dependencies
 
 * nltk - NLTK is a leading platform for building Python programs to work with human language data.
 * BeautifulSoup - Beautiful Soup is a Python library for pulling data out of HTML and XML files.
+* requests - requests is a Python module for sending HTTP requests.
 ```
-$ easy_install nltk beautifulsoup4
+$ easy_install nltk beautifulsoup4 requests
 ```
 or
 ````
-$ pip install nltk beautifulsoup4
+$ pip install nltk beautifulsoup4 requests
 ```
 
 NOTE: you may need to setup PYTHONPATH to include the path of installed modules if those were installed into non-default locations (for instance if you installed it into your user space).
