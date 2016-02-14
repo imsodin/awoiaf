@@ -16,7 +16,10 @@ if [ ! -z $PIP ] || [ ! -z $EASY ]; then
         `which sudo` easy_install install nltk beautifulsoup4 requests
     fi
 
-    echo "2. Re-exporting PYTHONPATH"
+    echo "2. Installing nltk data"
+    python -m nltk.downloader punkt averaged_perceptron_tagger 
+
+    echo "3. Re-exporting PYTHONPATH"
     export PYTHONPATH="${PYTHONPATH}:${CURRENT_DIR}/src/lib"
     echo "   PYTHONPATH is $PYTHONPATH"
 
