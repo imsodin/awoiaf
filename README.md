@@ -9,7 +9,7 @@ Repo structure
 ==============
 ```
  |
- |-scr - main driver scripts (python)
+ |-src - main code base (python)
  |--lib - application modules
  |--sge - scripts to run jobs in parallel on a compute cluster  
  |-Data - downloaded data
