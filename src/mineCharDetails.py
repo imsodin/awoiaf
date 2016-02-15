@@ -39,6 +39,7 @@ chars = CharachterPage()
 if args.list_of_characters:
     list_of_characters = [str(x['*']) for x in chars.getCharachtersList()]
     pprint (list_of_characters)
+    sys.exit(0)
 
 if args.charachter:
     char_name = urllib.quote(args.charachter)
