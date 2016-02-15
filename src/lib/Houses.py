@@ -5,7 +5,6 @@ import json
 from pprint import pprint
 from Page import Page
 from NLP import NLP
-# from mongodb import MongoDB
 
 
 class HousesPage(Page):
@@ -22,8 +21,6 @@ class HousesPage(Page):
         """
         super(HousesPage, self).__init__()
         self.arg = arg
-        # self.arg['houses_list_file'] = '../Data/list_of_IAF_houses'
-        # self.arg['houses_details_file']  = '../Data/houses_details'
 
     def getListOfHouses(self):
         """Returns a list of the great houses of westeros
@@ -125,34 +122,4 @@ class HousesPage(Page):
 
     def nlpHouseInfo(self, text):
         return NLP().pipeline(text)
-
-
-#   def get_houses_loyalty(self):
-#       cur=mong.arg['collection_ref'].find({},{"Name":1,"Overlord":1})
-#       for c in cur:
-#         try:
-#           s =  c['Name'][0].rstrip().lstrip()
-#           o = c['Overlord'][0].rstrip().lstrip()
-#           seq = (s,o)
-#           print "\t\t\t".join(seq)
-#         except KeyError:
-#           continue
-
-# mong = MongoDB(dict({'collection':'HousesPage'}))
-# houses = HousesPage(dict())
-
-# with open(houses.arg['houses_list_file']) as f:
-#       houses_list = f.read().splitlines()
-
-# for house in houses_list:
-#   print ("Processing house:  " + house)
-#   info = houses.get_house_info (house)
-#   mong.arg['collection_ref'].insert(info)
-
-
-# houses.get_houses_loyalty()
-
-
-
-
 

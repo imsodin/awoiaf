@@ -11,7 +11,7 @@ Repo structure
  |
  |-src - main code base (python)
  |--lib - application modules
- |--sge - scripts to run jobs in parallel on a compute cluster  
+ |--sge - scripts to run jobs in parallel on a compute cluster
  |-Data - downloaded data
 ```
 
@@ -21,7 +21,6 @@ Quick Start
 Prerequisites
 -------------
 
-* MongoDB - NoSQL document database
 * easy_install or pip - package managers for python
 
 Easy setup
@@ -31,7 +30,7 @@ To download the dependencies: set the correct PYTHONPATH, run `. ./build.sh` fro
 
 **Important**: it is necessary to export the PYTONPATH every time you wish to run these tools. To do so you can either run the build script every time, or jump to the configuration section below.
 
-Alternatively follow the next steps:   
+Alternatively follow the next steps:
 
 Dependencies
 ------------
@@ -70,12 +69,12 @@ Hint
 ----
 The scrtips in the scr folder are used as the main drivers that build the data repository. You can look at those scripts as an entry point into the code. Here is a bried description for each script:
 
-- mineCharDetails.py  - handles Ice and Fire charachters' data. scripts can be used to: 
+- mineCharDetails.py  - handles Ice and Fire charachters' data. scripts can be used to:
   1. `python mineCharDetails -l` obtain a list of charchater names
-  2. `python mineCharDetails -c "Some One"` extract data from wiki entries dedicated to charachter `Some One`. 
+  2. `python mineCharDetails -c "Some One"` extract data from wiki entries dedicated to charachter `Some One`.
 
-- mineHousesDetails.py  - handles data related to the great houses of Westeros. scripts can be used to: 
-  1. `python mineHousesDetails -l` obtain a list of all the houses names mentioned in the AWOIAF wiki 
+- mineHousesDetails.py  - handles data related to the great houses of Westeros. scripts can be used to:
+  1. `python mineHousesDetails -l` obtain a list of all the houses names mentioned in the AWOIAF wiki
   2. `python mineHousesDetails -s "House Name"`extracts data from wiki pages dedicated to `House Name`.
 
 
@@ -84,4 +83,4 @@ Look at the scripts in the scr folder to see how the modules in this app can be 
 Running multiple jobs in parallel
 =================================
 
-As this project deals with processing 1000s of wiki pages it would make sense to use parallel processing to speed things up. If you have access to a compute cluster and to the sonofgrid scheduling system (formerly called SGE) then check the folder scr/sge for scripts and documentation on how to run paralllel jobs. If you want to schedule jobs using a different system (e.g. Hadoop YARN) then you will have to figure out how to do this yourself. 
+As this project deals with processing 1000s of wiki pages it would make sense to use parallel processing to speed things up. If you have access to a compute cluster and to the sonofgrid scheduling system (formerly called SGE) then check the folder scr/sge for scripts and documentation on how to run paralllel jobs. If you want to schedule jobs using a different system (e.g. Hadoop YARN) then you will have to figure out how to do this yourself.
