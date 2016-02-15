@@ -39,7 +39,6 @@ if args.charachter:
   file_name_info = '/'.join([app.settings['storage_folder']['Charachters_info'],char_name])
   file_name_nlp = '/'.join([app.settings['storage_folder']['Charachters_nlp'],char_name])
 
-
 if not os.path.exists(file_name_text):
   text_content = chars.fetchCharachterText(char_name)
   app.storeFile(file_name_text, text_content)

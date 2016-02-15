@@ -40,11 +40,16 @@ class CharachterPage(Page):
         self.fetchPage()
         _request = self.getRequest()
         _data = json.loads(_request.content)
-        _data = _data['parse']['text']['*']
-        # pprint (_data)
-        soup = BeautifulSoup(_data)
-        text = soup.getText()
-        return text
+        
+        try:
+            _data = _data['parse']['text']['*']
+            # pprint (_data)
+            soup = BeautifulSoup(_data)
+            text = soup.getText()
+        except Exception:
+            raise Exception("Was not able to parse. Sure you entered the right Character name?")
+        else:
+            return text
 
 
     def getCharachterInfo(self, charachter_name):
