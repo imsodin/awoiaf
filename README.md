@@ -58,7 +58,7 @@ $ python -m nltk.downloader punkt averaged_perceptron_tagger
 Configuration
 -------------
 
-You will need to set up the PYTHONPATH to refeerence the lib folder
+You will need to set up the PYTHONPATH to reference the lib folder
 
 ```
 # in bash
