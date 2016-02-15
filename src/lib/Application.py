@@ -41,6 +41,8 @@ class Application(object):
             self.settings['rootdir'] = os.path.realpath(_cur_path+'/../..')
             # assign data dir
             self.settings['datadir'] =  '/'.join([self.settings['rootdir'],'Data'])
+            if not os.path.exists(self.settings['datadir']):
+                os.makedirs(self.settings['datadir'])
 
             for dir_path in [self.settings['rootdir'], self.settings['datadir']]:
                 if not dir_path or not os.path.isdir(dir_path):
