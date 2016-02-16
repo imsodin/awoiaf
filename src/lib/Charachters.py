@@ -102,16 +102,15 @@ class CharachterPage(Page):
     def nlpCharachterInfo(self, text):
         return NLP().pipeline(text)
 
+    def stroreCharachterDetails(self, input_data):
+        client = MongoClient('mongodb://localhost:27017/')
+        database = client['local']
+        collection = database['Charachters']
+        data = json.load(input_data)
 
-  def stroreCharachterDetails(self, input_data):
-    client = MongoClient('mongodb://localhost:27017/')
-    db = client['local']
-    collection = db['Charachters']
-    data = json.load(input_data)
-
-    for l in data:
-      pprint(l)
-      collection.insert(l)
+        for _item in data:
+            pprint(_item)
+            collection.insert(_item)
 
 
 
