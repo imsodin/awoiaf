@@ -4,10 +4,9 @@ import json
 from Page import Page
 from Application import Application
 from NLP import NLP
-
 from pprint import pprint
-# from pymongo import MongoClient
-# import traceback
+from pymongo import MongoClient
+
 
 class CharachterPage(Page):
     """Handles data scrpaing of charachters"""
@@ -40,7 +39,7 @@ class CharachterPage(Page):
         self.fetchPage()
         _request = self.getRequest()
         _data = json.loads(_request.content)
-        
+
         try:
             _data = _data['parse']['text']['*']
             # pprint (_data)
@@ -104,19 +103,15 @@ class CharachterPage(Page):
         return NLP().pipeline(text)
 
 
-#   def stroreHouseDetails(self):
-#     client = MongoClient('mongodb://localhost:27017/')
-#     db = client['local']
-#     collection = db['Charachters']
+  def stroreCharachterDetails(self, input_data):
+    client = MongoClient('mongodb://localhost:27017/')
+    db = client['local']
+    collection = db['Charachters']
+    data = json.load(input_data)
 
-#     input_filename = '../Data/charachters_details'
-#     json_data=open(input_filename)
-#     data = json.load(json_data)
-#     json_data.close
-
-#     for l in data:
-#       pprint(l)
-#       collection.insert(l)
+    for l in data:
+      pprint(l)
+      collection.insert(l)
 
 
 

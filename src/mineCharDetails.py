@@ -52,6 +52,7 @@ if args.charachter:
         app.storeFile(file_name_info, info_content)
         nlp_content = chars.nlpCharachterInfo(text_content)
         app.storeFile(file_name_nlp, nlp_content)
+        chars.stroreCharachterDetails(info_content)
     else:
         with open(file_name_text, 'r') as myfile:
             data=myfile.read().replace('\n', '')
