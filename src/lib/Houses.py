@@ -5,7 +5,7 @@ import json
 from pprint import pprint
 from Page import Page
 from NLP import NLP
-# from mongodb import MongoDB
+from pymongo import MongoClient
 
 
 class HousesPage(Page):
@@ -125,6 +125,12 @@ class HousesPage(Page):
 
     def nlpHouseInfo(self, text):
         return NLP().pipeline(text)
+
+    def stroreHouseDetails(self, input_data):
+        client = MongoClient('mongodb://pp-dev.informatik.tu-muenchen.de:27017/')
+        database = client['awoiaf']
+        collection = database['Houses']
+        collection.insert(input_data)
 
 
 #   def get_houses_loyalty(self):

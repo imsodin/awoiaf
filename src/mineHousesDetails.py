@@ -62,3 +62,9 @@ if args.house:
         content=myfile.read().replace('\n', '')
     content = houses.nlpHouseInfo(content)
     app.storeFile(file_name_nlp, content)
+
+    with open(file_name_info, 'r') as myfile:
+        info_content=ast.literal_eval(myfile.read().replace('\n', ''))
+    houses.stroreHouseDetails(info_content)
+
+
