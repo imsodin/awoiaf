@@ -23,6 +23,7 @@ Attributes:
 import os
 import argparse
 import urllib
+import ast
 from pprint import pprint
 from Houses import HousesPage
 from Application import Application
