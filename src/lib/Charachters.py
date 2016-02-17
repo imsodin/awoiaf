@@ -42,7 +42,6 @@ class CharachterPage(Page):
 
         try:
             _data = _data['parse']['text']['*']
-            # pprint (_data)
             soup = BeautifulSoup(_data)
             text = soup.getText()
         except Exception:
@@ -103,14 +102,12 @@ class CharachterPage(Page):
         return NLP().pipeline(text)
 
     def stroreCharachterDetails(self, input_data):
-        client = MongoClient('mongodb://localhost:27017/')
-        database = client['local']
+        client = MongoClient('mongodb://pp-dev.informatik.tu-muenchen.de:27017/')
+        database = client['awoiaf']
         collection = database['Charachters']
-        data = json.load(input_data)
+        collection.insert(input_data)
 
-        for _item in data:
-            pprint(_item)
-            collection.insert(_item)
+
 
 
 

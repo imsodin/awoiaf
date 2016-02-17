@@ -16,8 +16,9 @@ Attributes:
 import argparse
 import urllib
 import os
-
+import json
 import traceback
+import ast
 from pprint import pprint
 from Charachters import CharachterPage
 from Application import Application
@@ -52,9 +53,17 @@ if args.charachter:
         app.storeFile(file_name_info, info_content)
         nlp_content = chars.nlpCharachterInfo(text_content)
         app.storeFile(file_name_nlp, nlp_content)
-        chars.stroreCharachterDetails(info_content)
-    else:
-        with open(file_name_text, 'r') as myfile:
-            data=myfile.read().replace('\n', '')
-        content = chars.nlpCharachterInfo(data)
-        app.storeFile(file_name_nlp, content)
+
+    with open(file_name_text, 'r') as myfile:
+        data=myfile.read().replace('\n', '')
+    content = chars.nlpCharachterInfo(data)
+    app.storeFile(file_name_nlp, content)
+
+    with open(file_name_info, 'r') as myfile:
+        info_content=ast.literal_eval(myfile.read().replace('\n', ''))
+    chars.stroreCharachterDetails(info_content)
+
+
+
+
+    

@@ -29,8 +29,8 @@ _houses = HousesPage(dict())
 _list_of_houses = _houses.getListOfHouses()
 for l in _list_of_houses:
     l = l.replace(" ", "_").replace("'", "").strip().rstrip().lstrip()
-    _cmd = " ".join(["/usr/bin/qsub", "-j", "y", "-o", "/dev/null", rootdir+"/scr/sge/awoiaf_houses_miner.sh", l])
+    _cmd = " ".join(["/usr/bin/qsub", "-j", "y", "-o", "/dev/null", rootdir+"/src/sge/awoiaf_houses_miner.sh", l])
     if args.verbose:
         print _cmd
     if not args.dryrun:
-        call(["/usr/bin/qsub", "-j", "y", "-o", "/dev/null", rootdir+"/scr/sge/awoiaf_houses_miner.sh", l])
+        call(["/usr/bin/qsub", "-j", "y", "-o", "/dev/null", rootdir+"/src/sge/awoiaf_houses_miner.sh", l])
