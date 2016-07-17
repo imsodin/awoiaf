@@ -1,3 +1,4 @@
+#!/usr/bin/env python2
 """Summary: driver script to handle charchter pages.
 1. downloads input character page as raw text
 2. parses the page's info box

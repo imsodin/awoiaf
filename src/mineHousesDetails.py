@@ -1,3 +1,4 @@
+#!/usr/bin/env python2
 """Summary: driver script to handle data related to houses information in the wiki. The script can be used for
 
 * download a list of great houses

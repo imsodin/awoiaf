@@ -1,3 +1,4 @@
+#!/usr/bin/env python2
 import traceback
 import nltk
 from pprint import pprint

@@ -1,3 +1,4 @@
+#!/usr/bin/env python2
 """creates SGE jobs to fetch details for each characters"""
 import argparse
 from subprocess import call

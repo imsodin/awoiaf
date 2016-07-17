@@ -1,3 +1,4 @@
+#!/usr/bin/env python2
 """
 Attributes:
     debug (int): enables debug messages
