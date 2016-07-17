@@ -46,7 +46,8 @@ class CharacterPage(Page):
             soup = BeautifulSoup(_data)
             text = soup.getText()
         except Exception:
-            raise Exception("Was not able to parse. Sure you entered the right Character name?")
+            raise Exception("Was not able to parse. Sure you entered the right"
+                            "Character name?")
         else:
             return text
 
