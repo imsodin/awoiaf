@@ -55,7 +55,7 @@ class HousesPage(Page):
         """Returns JSON formatted data structure for house_name
 
         Args:
-            house_name (sttring): name of house (spaces allowed)
+            house_name (string): name of house (spaces allowed)
 
         Returns:
             dict: JSON formatted data for house. empty if house not found

@@ -1,4 +1,4 @@
-"""creates SGE jobs to fetch details for each charachters"""
+"""creates SGE jobs to fetch details for each characters"""
 import argparse
 from subprocess import call
 import os

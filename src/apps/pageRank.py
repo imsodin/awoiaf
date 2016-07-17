@@ -3,7 +3,7 @@ import json
 import sys
 import io
 from pprint import pprint
-from Charachters import Charachters
+from Characters import Characters
 
 class pageRank(object):
   """docstring for pageRank"""
@@ -41,14 +41,14 @@ class pageRank(object):
         continue
       self.getLinks(l['title'], level)
 
-chars = Charachters(dict())
-print "Getting charachter list"
-chars.getCharachtersList()
+chars = Characters(dict())
+print "Getting character list"
+chars.getCharactersList()
 
 score_data_file = '../Data/pageRank/score'
 sf = io.open(score_data_file, 'a', encoding='utf8')
 
-for char_name in chars.args['charachters'][:2]:
+for char_name in chars.args['characters'][:2]:
   print "Now processing "+char_name
   pages_visited = []
   pr = pageRank(dict({'pages_visited': pages_visited}))

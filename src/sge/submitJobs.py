@@ -1,11 +1,11 @@
-"""creates SGE jobs to fetch details for each charachters"""
+"""creates SGE jobs to fetch details for each characters"""
 import argparse
 from subprocess import call
 import os
 import ConfigParser
 import traceback
 from pprint import pprint
-from Charachters import CharachterPage
+from Characters import CharacterPage
 
 
 # Command line options
@@ -25,8 +25,8 @@ except Exception, e:
   traceback.print_exc()
 
 
-_chars = CharachterPage()
-_list_of_chars = _chars.getCharachtersList()
+_chars = CharacterPage()
+_list_of_chars = _chars.getCharactersList()
 for l in _list_of_chars:
     l = l['*']
     l = l.replace(" ", "_").replace("'", "").strip().rstrip().lstrip()

@@ -7,15 +7,15 @@ from NLP import NLP
 
 from pprint import pprint
 
-class CharachterPage(Page):
-    """Handles data scrpaing of charachters"""
+class CharacterPage(Page):
+    """Handles data scrpaing of characters"""
 
 
-    def getCharachtersList(self):
-        """Returns a list of charachters
+    def getCharactersList(self):
+        """Returns a list of characters
 
         Returns:
-            list: list of charachters
+            list: list of characters
         """
         self.setParams('page', 'List_of_characters').setParams('prop', 'links')
         self.fetchPage()
@@ -24,16 +24,16 @@ class CharachterPage(Page):
         _links_list = _data['parse']['links']
         return _links_list
 
-    def fetchCharachterText(self, charachter_name):
-        """Downloads charachter page in raw text format
+    def fetchCharacterText(self, character_name):
+        """Downloads character page in raw text format
 
         Args:
-            charachter_name (string): name of charachter (spaces allowed)
+            character_name (string): name of character (spaces allowed)
 
         Returns:
             string: entire text of page
         """
-        self.setParams('page', charachter_name)
+        self.setParams('page', character_name)
         self.setParams('prop', 'text')
         self.fetchPage()
         _request = self.getRequest()
@@ -50,16 +50,16 @@ class CharachterPage(Page):
             return text
 
 
-    def getCharachterInfo(self, charachter_name):
-        """Returns JSON formatted data structure for charachter_name
+    def getCharacterInfo(self, character_name):
+        """Returns JSON formatted data structure for character_name
 
         Args:
-            charachter_name (sttring): name of charachter (spaces allowed)
+            character_name (string): name of character (spaces allowed)
 
         Returns:
-            dict: JSON formatted data for charachter. empty if chacrachter not found
+            dict: JSON formatted data for character. empty if chacrachter not found
         """
-        self.setParams('page', charachter_name)
+        self.setParams('page', character_name)
         self.setParams('prop', 'text')
         self.setParams('section', 0)
         self.fetchPage()
@@ -77,7 +77,7 @@ class CharachterPage(Page):
             html_to_parse (string): input text
 
         Returns:
-            dict: JSON formatted charachter data
+            dict: JSON formatted character data
         """
         _parsed_html = BeautifulSoup(html_to_parse)
         _data = dict()
@@ -98,6 +98,6 @@ class CharachterPage(Page):
         _data[unicode('Summary')] = _paragraph
         return _data
 
-    def nlpCharachterInfo(self, text):
+    def nlpCharacterInfo(self, text):
         return NLP().pipeline(text)
 

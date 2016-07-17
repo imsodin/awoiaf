@@ -29,7 +29,7 @@ class Application(object):
             'debug': 1,
             'rootdir': '',
             'datadir': '',
-            'data_folders':['Charachters', 'Houses', 'Culture', 'History'],
+            'data_folders':['Characters', 'Houses', 'Culture', 'History'],
             'data_types': ['info', 'text', 'nlp'],
             'storage_folder': {},
         }
